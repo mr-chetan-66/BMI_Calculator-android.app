@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <!-- About BMI Section -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:attr/dividerVertical"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <!--  BMI Formula -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/bmi_formula"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="BMI Formula"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdowna_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: About BMI -->
+                <TextView
+                    android:id="@+id/about_bmi_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Body Mass Index (BMI) is a simple formula used to calculate whether a person has a healthy weight for their height. Formula: BMI = Weight in kilograms / (Height in meters)^2"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- FAQs -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/faq_bmi_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="FAQs"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdowndb_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <TextView
+                    android:id="@+id/faq_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="1. How accurate is BMI? BMI is a general indicator and may not be accurate for athletes.\n2. What is a normal BMI range? The normal BMI range is between 18.5 and 24.9."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- How to Improve BMI Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/improve_bmi_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="How to Improve BMI"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdownc_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: How to Improve BMI -->
+                <TextView
+                    android:id="@+id/improve_bmi_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Improving BMI involves maintaining a balanced diet, regular exercise, and consulting a healthcare professional to guide healthy weight gain or loss."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Health Risks Associated with BMI Ranges Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/health_risks_bmi_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Health Risks- BMI Ranges"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdownd_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: Health Risks Associated with BMI Ranges -->
+                <TextView
+                    android:id="@+id/health_risks_bmi_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="A BMI below 18.5 indicates underweight and may lead to nutrient deficiencies. A BMI above 24.9 indicates overweight or obesity, which can lead to conditions like heart disease, diabetes, and hypertension."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Side Effects of High and Low BMI -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/side_effects_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Side Effects of High and Low BMI"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdowne_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+                <!-- Content: Side Effects -->
+                <TextView
+                    android:id="@+id/side_effects_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Low BMI: Weak immune system, nutrient deficiencies, etc. High BMI: Heart disease, diabetes, high blood pressure, etc."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- History of BMI Section -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/history_bmi_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="History of BMI"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdownf_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: History of BMI -->
+                <TextView
+                    android:id="@+id/history_bmi_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="The BMI was developed by Adolphe Quetelet in the early 19th century as a way to assess the health of populations based on their physical measurements."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Developer Info -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/developer_info_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Developer"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdowng_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: Developer -->
+                <TextView
+                    android:id="@+id/developer_info_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Developed by: Chetan Awari. Passionate Android Developer with expertise in Kotlin and mobile app development."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Terms and Conditions -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/terms_conditions_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Terms and Conditions"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdownh_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: Terms and Conditions -->
+                <TextView
+                    android:id="@+id/terms_conditions_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="By using this app, you agree to the terms and conditions mentioned. This app provides general health information and is not a substitute for medical advice."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Copyright -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/copyright_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Copyright"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdowni_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: Copyright -->
+                <TextView
+                    android:id="@+id/copyright_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="© 2024 Chetan Awari. All rights reserved. This app is the intellectual property of the developer and cannot be distributed without permission."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Legal Information -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/legal_bmi_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Legal Information"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdownj_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content Text -->
+                <TextView
+                    android:id="@+id/leg_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/legal_bmi_header"
+                    android:padding="10dp"
+                    android:text="This app provides general health information..."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--  Privacy Policy -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#1C1C1C"
+                android:padding="10dp">
+
+                <!-- Header: About BMI -->
+                <TextView
+                    android:id="@+id/privacy_policy_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:onClick="toggleVisibility"
+                    android:text="Privacy Policy"
+                    android:textColor="#EA2831"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Dropdown Icon -->
+                <ImageView
+                    android:id="@+id/dropdownk_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="Dropdown Icon"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dropdown_arrow" />
+
+                <!-- Content: Privacy Policy -->
+                <TextView
+                    android:id="@+id/privacy_policy_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="We respect your privacy. This app does not collect any personal data from users. Please refer to our full privacy policy for more details."
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent_dark">#FF5722</color> <!-- Orange accent color -->
+    <color name="primary_dark">#121212</color> <!-- Darker shade of black for primary areas -->
+    <color name="secondary_dark">#1F1F1F</color> <!-- Dark grey for secondary areas -->
+    <color name="bmi_bg">#111822</color>
+</resources>
