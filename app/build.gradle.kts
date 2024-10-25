@@ -40,7 +40,7 @@ android {
     }
 
     viewBinding {
-        enable = true
+        enable = true // Corrected here
     }
 }
 

@@ -1,9 +1,7 @@
 package com.tsa.bmicalculator
-
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +9,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Toast.makeText(this, "Welcome to BMI Calculator!", Toast.LENGTH_LONG).show()
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
@@ -20,14 +17,12 @@ class MainActivity : AppCompatActivity() {
             loadFragment(HomeFragment())
         }
 
-        bottomNavigationView.setOnItemSelectedListener { item ->
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             var selectedFragment: Fragment? = null
 
             when (item.itemId) {
                 R.id.nav_home -> selectedFragment = HomeFragment()
                 R.id.nav_about -> selectedFragment = AboutFragment()
-                // Replace with your actual fragment
-                // Add more cases for other fragments as needed
             }
 
             loadFragment(selectedFragment)
