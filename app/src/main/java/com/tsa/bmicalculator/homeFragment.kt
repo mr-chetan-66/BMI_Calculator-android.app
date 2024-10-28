@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -18,16 +19,17 @@ import com.bumptech.glide.Glide
 import com.tsa.bmicalculator.databinding.FragmentHomeBinding
 import java.text.DecimalFormat
 
+
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val imageSwitchViewModel: ImageSwitchViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
         setupObservers()
         setupListeners()
 
@@ -71,6 +73,7 @@ class HomeFragment : Fragment() {
 
         if (bmi != -1.0) {
             val age = binding.agetext.text.toString().toIntOrNull()
+
             if (age == null || age <= 0 || age > 110) {
                 Toast.makeText(requireContext(), "Please enter a valid age.", Toast.LENGTH_SHORT).show()
             } else {
@@ -93,26 +96,29 @@ class HomeFragment : Fragment() {
         imageSwitchViewModel.updateImageBasedOnBmi(bmiResult.toFloat())
         val normalBmiMin = 18.5
         val normalBmiMax = 24.9
+        val resultString :String
 
         val weightForNormalBmiMin = normalBmiMin * (heightMeters * heightMeters)
         val weightForNormalBmiMax = normalBmiMax * (heightMeters * heightMeters)
-
-        val resultString = when {
+        when {
             bmi < normalBmiMin -> {
                 val weightToGain = weightForNormalBmiMin - weightKg
                 binding.resultview.setTextColor(Color.RED)
-                "You are underweight.\n%.2f kg gain to reach a healthy BMI.".format(weightToGain)
+                resultString="You are underweight.\n%.2f kg gain to reach a healthy BMI.".format(weightToGain)
+                sharedViewModel.setBmi(bmi,weightToGain)
             }
 
             bmi > normalBmiMax -> {
                 val weightToLose = weightKg - weightForNormalBmiMax
                 binding.resultview.setTextColor(Color.RED)
-                "You are overweight.\n%.2f kg lose to reach a normal BMI.".format(weightToLose)
+                resultString="You are overweight.\n%.2f kg lose to reach a normal BMI.".format(weightToLose)
+                sharedViewModel.setBmi(bmi,(-1)*weightToLose)
             }
 
             else -> {
                 binding.resultview.setTextColor(Color.GREEN)
-                "$bmiResult - BMI is in the normal range!\nYou have a healthy Weight"
+                resultString="$bmiResult - BMI is in the normal range!\nYou have a healthy Weight"
+                sharedViewModel.setBmi(bmi,99.99)
             }
         }
         binding.resultview.text = resultString
