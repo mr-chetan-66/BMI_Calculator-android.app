@@ -36,6 +36,7 @@ class AboutFragment : Fragment() {
         setupExpandableSection(view, R.id.legal_info_header, R.id.legal_info_content)
         setupExpandableSection(view, R.id.privacy_policy_header, R.id.privacy_policy_content)
         setupExpandableSection(view, R.id.copyright_header, R.id.copyright_content)
+
     }
 
     // Helper function to setup each expandable section using Button
@@ -158,7 +159,6 @@ class AboutFragment : Fragment() {
 
         val privacyTextView: TextView = view.findViewById(R.id.privacy_policy_content)
         privacyTextView.text = Html.fromHtml(privacyStatement, Html.FROM_HTML_MODE_LEGACY)
-
 
         // Copyright Notice----------------------------------------
         val copyrightNotice = """

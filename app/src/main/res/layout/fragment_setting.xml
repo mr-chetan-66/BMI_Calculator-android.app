@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/black"
     android:padding="16dp">
 
     <LinearLayout
@@ -17,7 +18,7 @@
             android:layout_gravity="center_horizontal"
             android:paddingBottom="16dp"
             android:text="Settings"
-            android:textColor="#111318"
+            android:textColor="#ABABAB"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -28,115 +29,91 @@
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="Privacy"
-            android:textColor="#111318"
+            android:textColor="#EA2831"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <!-- Data Privacy Row -->
         <LinearLayout
+            android:id="@+id/dataPrivacyLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:clickable="true"
+            android:focusable="true"
             android:padding="8dp">
 
             <TextView
+                android:id="@+id/dataPrivacyTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Data Privacy"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/arrow_lite_mode" />
+                android:id="@+id/dataPrivacyArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/arrow" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/privacyDetailsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_about_content"
+            android:text="We value your privacy and follow data protection guidelines. Your data is securely stored and processed only as necessary to provide the BMI app’s features. For detailed information, please see our Privacy Policy."
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+
 
         <!-- Terms & Conditions Row -->
         <LinearLayout
+            android:id="@+id/termsAndConditionsLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:clickable="true"
+            android:focusable="true"
             android:padding="8dp">
 
             <TextView
+                android:id="@+id/termsAndConditionsTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Terms and Conditions"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/termsAndConditionsArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrow_lite_mode" />
+                android:src="@drawable/arrow" />
         </LinearLayout>
 
-        <!-- Account Section Title -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp"
-            android:text="Account"
-            android:textColor="#111318"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- Change Password Row -->
-        <LinearLayout
+            android:id="@+id/termsAndConditionsTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:text="By using this app, you agree to the Terms and Conditions. Please read them carefully to understand your rights and responsibilities."
+            android:paddingTop="8dp"
+            android:background="@drawable/round_about_content"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Change Password"
-                android:textColor="#111318"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow_lite_mode" />
-        </LinearLayout>
-
-        <!-- Logout Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="8dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Logout"
-                android:textColor="#111318"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow_lite_mode" />
-        </LinearLayout>
 
         <!-- Notifications Section Title -->
         <TextView
@@ -145,7 +122,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="Notifications"
-            android:textColor="#111318"
+            android:textColor="#EA2831"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -163,13 +140,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Enable Notifications"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
 
             <Switch
+                android:id="@+id/mySwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="false" />
+                android:thumbTint="@color/thumb_color"
+                android:trackTint="@color/track_color"
+                android:layout_gravity="center"/>
         </LinearLayout>
 
         <!-- Units Section Title -->
@@ -179,7 +159,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="Units"
-            android:textColor="#111318"
+            android:textColor="#EA2831"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -197,14 +177,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Unit Preference"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Metric"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -215,57 +195,89 @@
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="Support"
-            android:textColor="#111318"
+            android:textColor="#EA2831"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <!-- Help Center Row -->
         <LinearLayout
+            android:id="@+id/helpCenterLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:clickable="true"
+            android:focusable="true"
             android:padding="8dp">
 
             <TextView
+                android:id="@+id/helpCenterTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Help Center"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
 
             <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/helpCenterArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrow_lite_mode" />
+                android:src="@drawable/arrow" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/helpCenterTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="For assistance, visit our Help Center. Find answers to common questions and troubleshooting tips."
+            android:paddingTop="8dp"
+            android:background="@drawable/round_about_content"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
 
         <!-- Contact Support Row -->
         <LinearLayout
+            android:id="@+id/contactSupportLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:orientation="horizontal"
+            android:clickable="true"
+            android:focusable="true"
             android:padding="8dp">
 
             <TextView
+                android:id="@+id/contactSupportitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Contact Support"
-                android:textColor="#111318"
+                android:textColor="#F5F5F5"
                 android:textSize="16sp" />
 
             <ImageView
-                android:layout_width="14dp"
-                android:layout_height="14dp"
+                android:id="@+id/contactSupportArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/arrow_lite_mode" />
+                android:src="@drawable/arrow" />
         </LinearLayout>
+        <TextView
+            android:id="@+id/contactSupportTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="If you need further support, please contact our Support Team. We are here to help you with any issues."
+            android:paddingTop="8dp"
+            android:textSize="16sp"
+            android:background="@drawable/round_about_content"
+            android:textColor="#FFFFFF"
+            android:visibility="gone" />
+
 
     </LinearLayout>
 </ScrollView>
