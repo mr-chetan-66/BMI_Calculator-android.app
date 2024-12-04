@@ -32,7 +32,6 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         setupObservers()
         setupListeners()
-
         return binding.root
     }
 
@@ -85,7 +84,6 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
     private fun formatBMI(bmi: Double): String {
         val decimalFormat = DecimalFormat("0.00")
         return decimalFormat.format(bmi)
@@ -97,7 +95,6 @@ class HomeFragment : Fragment() {
         val normalBmiMin = 18.5
         val normalBmiMax = 24.9
         val resultString :String
-
         val weightForNormalBmiMin = normalBmiMin * (heightMeters * heightMeters)
         val weightForNormalBmiMax = normalBmiMax * (heightMeters * heightMeters)
         when {
@@ -140,16 +137,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun fadeAndSwitchImage(imageRes: Int) {
-        // Fade-out animation before changing image
         val fadeOut = AlphaAnimation(1f, 0f).apply { duration = 250 }
         binding.imageview.startAnimation(fadeOut)
-
-        // Load new image after fade-out
         Glide.with(binding.imageview.context)
             .load(imageRes)
             .into(binding.imageview)
-
-        // Fade-in animation after image is set
         val fadeIn = AlphaAnimation(0f, 1f).apply { duration = 250 }
         binding.imageview.startAnimation(fadeIn)
     }
@@ -259,7 +251,6 @@ class ImageSwitchViewModel : ViewModel() {
         handler.removeCallbacksAndMessages(null)
     }
 
-    // ViewModel's onCleared to make sure it cleans up properly
     override fun onCleared() {
         super.onCleared()
         cleanup()

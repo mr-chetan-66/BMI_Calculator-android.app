@@ -2,12 +2,14 @@ package com.tsa.bmicalculator
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -23,12 +25,11 @@ class ProfileFragment : Fragment() {
     private lateinit var requiredChangeTextView: TextView
     private lateinit var healthTipsTextView: TextView
     private lateinit var lastCheckDateTextView: TextView
+    private lateinit var profileImageView:ImageView
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
     private var typewriterJob: Job? = null
-    private val texts = listOf(
-        "Hii Chetan !"
-    )
+    private var texts = listOf("Hii CHETAN !")
 
     private val dailyFacts = listOf(
         "Drink plenty of water every day!",
@@ -51,18 +52,34 @@ class ProfileFragment : Fragment() {
         healthTipsTextView = view.findViewById(R.id.health_tips_content)
         factTextView = view.findViewById(R.id.news_content) // Replace with your TextView ID
         lastCheckDateTextView = view.findViewById(R.id.latest_date)
+        profileImageView = view.findViewById(R.id.profile_picture) // Correct ID for the ImageView
 
         startTypewriterEffect()
-
-        // Show a new daily fact
+        setProfile()
         displayBmiInfo()
         showNewDailyFact()
-
         return view
     }
 
+
+    private fun setProfile() {
+        val sharedPreferences = requireActivity().getSharedPreferences("UserProfile", MODE_PRIVATE)
+        val gender = sharedPreferences.getString("gender", "Unknown")
+        when (gender) {
+            "Male" -> profileImageView.setImageResource(R.drawable.profile_boy)
+            else -> profileImageView.setImageResource(R.drawable.profile_girl)
+        }
+    }
+
     private fun startTypewriterEffect() {
-        greetingTextView.text = ""
+        // Retrieve the name from SharedPreferences
+        val sharedPreferences = requireActivity().getSharedPreferences("UserProfile", MODE_PRIVATE)
+        val name = sharedPreferences.getString("name", "Buddy") ?: "Buddy" // Fallback to "Buddy" if null
+
+        // Update the greeting text dynamically
+        texts = listOf("Hii $name !") // Update the text list with the user's name
+
+        greetingTextView.text = "" // Clear existing text
         var textIndex = 0
 
         // Cancel any existing job if running
@@ -80,6 +97,7 @@ class ProfileFragment : Fragment() {
             }
         }
     }
+
 
     private suspend fun typeText(text: String) {
         greetingTextView.text = "" // Clear previous text
@@ -223,5 +241,4 @@ class ProfileFragment : Fragment() {
         super.onPause()
         typewriterJob?.cancel() // Stop typing effect
     }
-
 }
