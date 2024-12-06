@@ -63,5 +63,6 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.1")
     implementation ("androidx.core:core-ktx:1.7.0") // or latest version
     implementation ("androidx.activity:activity-ktx:1.2.0")
+    implementation ("com.airbnb.android:lottie:6.6.1")
     kapt("com.github.bumptech.glide:compiler:4.15.0")
 }

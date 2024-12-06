@@ -13,21 +13,26 @@
         android:theme="@style/Theme.BMICalculator"
         tools:targetApi="31">
         <activity
+            android:name=".EntryAnim"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:resizeableActivity="true"
-            android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowTranslucentNavigation="true">
             <meta-data
                 android:name="android.max_aspect"
                 android:value="2.1" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".FormActivity" />
+        <activity
+            android:name=".FormActivity"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

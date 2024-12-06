@@ -1,11 +1,11 @@
 package com.tsa.bmicalculator
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import android.content.Intent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -18,16 +18,14 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Welcome to BMI Calculator!", Toast.LENGTH_SHORT).show()
         bottomNavigationView = findViewById(R.id.bottom_navigation)
 
-        val sharedPreferences = getSharedPreferences("AppPreferences", MODE_PRIVATE)
-        val isFirstTime = sharedPreferences.getBoolean("isFirstTime", true)
+        val sharedPreferences = getSharedPreferences("UserProfile", MODE_PRIVATE)
+        val isFormCompleted = sharedPreferences.getBoolean("IsFormCompleted", false)
 
-        if (isFirstTime) {
-            val editor = sharedPreferences.edit()
-            editor.putBoolean("isFirstTime", false)
-            editor.apply()
+        if (!isFormCompleted) {
+            // Redirect to the form fragment/activity
             val intent = Intent(this, FormActivity::class.java)
             startActivity(intent)
-            finish()
+            finish() // Optional: Prevent returning to this activity
         } else {
             loadFragment(HomeFragment())
         }

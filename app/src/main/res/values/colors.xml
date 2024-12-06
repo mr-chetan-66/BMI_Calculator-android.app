@@ -6,4 +6,18 @@
     <color name="primary_dark">#121212</color> <!-- Darker shade of black for primary areas -->
     <color name="secondary_dark">#1F1F1F</color> <!-- Dark grey for secondary areas -->
     <color name="bmi_bg">#111822</color>
+
+    <!-- Primary Color Palette -->
+    <color name="primary_color">#FF03DAC5</color>
+    <color name="primary_variant">#FF018786</color>
+    <color name="secondary_color">#FF6200EE</color>
+
+    <!-- Background Colors -->
+    <color name="background_start">#FF6200EE</color>
+    <color name="background_end">#FFBB86FC</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary_dark">#DE000000</color>
+    <color name="text_secondary_dark">#99000000</color>
+
 </resources>

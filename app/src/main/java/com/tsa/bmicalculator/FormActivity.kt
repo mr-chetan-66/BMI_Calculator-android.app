@@ -1,36 +1,44 @@
 package com.tsa.bmicalculator
 
-import android.content.SharedPreferences
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.RadioButton
-import android.content.Intent
-import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.chip.ChipGroup
 
 class FormActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_form)  // Replace with your actual layout
+        setContentView(R.layout.activity_form) // Replace with your actual layout
 
         val etName = findViewById<EditText>(R.id.etName)
-        val rgGender = findViewById<RadioGroup>(R.id.rgGender)
         val btnSubmit = findViewById<Button>(R.id.btnSubmit)
+        val cgGender = findViewById<ChipGroup>(R.id.cgGender)
 
         btnSubmit.setOnClickListener {
             val name = etName.text.toString().trim()
-            val gender = when (rgGender.checkedRadioButtonId) {
-                R.id.rbMale -> "Male"
-                R.id.rbFemale -> "Female"
-                else -> "Unknown"
-            }
+            val genderChipId = cgGender.checkedChipId
 
+            // Validate name
             if (name.isEmpty()) {
                 etName.error = "Name is required"
+                etName.requestFocus()
                 return@setOnClickListener
+            }
+
+            // Validate gender selection
+            if (genderChipId == -1) { // No chip is selected
+                Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val gender = when (genderChipId) {
+                R.id.chipMale -> "Male"
+                R.id.chipFemale -> "Female"
+                else -> "Unknown"
             }
 
             // Save name and gender to SharedPreferences
@@ -38,6 +46,7 @@ class FormActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putString("name", name)
             editor.putString("gender", gender)
+            editor.putBoolean("IsFormCompleted", true)
             editor.apply()
 
             // Navigate to MainActivity after saving the data
@@ -46,4 +55,5 @@ class FormActivity : AppCompatActivity() {
         }
     }
 }
+
 
