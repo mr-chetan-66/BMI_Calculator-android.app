@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/about_scroll_view"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:fillViewport="true"
-    android:padding="16dp"
-    android:fitsSystemWindows="true">
-
-    <!-- About BMI Section -->
+    android:background="#F4F4F4"
+    android:theme="@style/AppTheme2"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <!-- BMI Formula -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bmi_formula_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="BMI Formula"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/bmi_formula_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:textSize="16sp"
             android:visibility="gone" />
@@ -44,72 +40,66 @@
         <!-- FAQs -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/faq_bmi_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="FAQs"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/faq_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_about_content"
-            android:textColor="#F5F5F5"
-            android:padding="10dp"
             android:elevation="4dp"
+            android:padding="10dp"
+            android:textColor="#F5F5F5"
             android:visibility="gone" />
 
 
         <!-- Content: How to Improve BMI -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/improve_bmi_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="How to Improve BMI"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/improve_bmi_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_about_content"
-            android:textColor="#F5F5F5"
             android:padding="10dp"
+            android:textColor="#F5F5F5"
             android:visibility="gone" />
 
 
         <!-- Content: Health Risks Associated with BMI Ranges -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/health_risks_bmi_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Health Risks- BMI Ranges"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/health_risks_bmi_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
 
@@ -117,23 +107,21 @@
         <!-- Content: Side Effects -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/side_effects_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Side Effects of High and Low BMI"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/side_effects_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
 
@@ -141,23 +129,21 @@
         <!-- Content: History of BMI -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/history_bmi_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="History of BMI"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/history_bmi_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
 
@@ -165,23 +151,21 @@
         <!-- Content: Developer -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/developer_info_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Developer"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/developer_info_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
 
@@ -189,23 +173,21 @@
         <!-- Content: Terms and Conditions -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/terms_conditions_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Terms and Conditions"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/terms_conditions_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
 
@@ -213,23 +195,21 @@
         <!-- Content: Copyright -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/copyright_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Copyright"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/copyright_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
 
@@ -237,51 +217,45 @@
         <!-- Header: Legal Info -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/legal_info_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Legal Information"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/legal_info_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
-            android:textColor="#F5F5F5"
+            android:padding="10dp"
             android:text="yet to fill"
+            android:textColor="#F5F5F5"
             android:visibility="gone" />
 
 
         <!-- Content: Privacy Policy -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/privacy_policy_header"
-            app:cornerRadius="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1C1C1C"
+            android:layout_marginBottom="4dp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Privacy Policy"
-            android:layout_marginBottom="4dp"
-            android:textColor="#EA2831"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
 
         <TextView
             android:id="@+id/privacy_policy_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
             android:background="@drawable/round_about_content"
+            android:padding="10dp"
             android:textColor="#F5F5F5"
             android:visibility="gone" />
-
-
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

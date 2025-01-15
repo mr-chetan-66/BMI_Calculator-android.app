@@ -1,283 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/setting_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    android:padding="16dp">
+    android:background="@drawable/background_gradient">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp">
 
         <!-- Settings Title -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:paddingBottom="16dp"
+            android:layout_gravity="start"
+            android:layout_marginBottom="24dp"
             android:text="Settings"
-            android:textColor="#ABABAB"
-            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
-        <!-- Privacy Section Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp"
-            android:text="Privacy"
-            android:textColor="#EA2831"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <!-- Data Privacy Row -->
-        <LinearLayout
-            android:id="@+id/dataPrivacyLayout"
+        <!-- Main Card Container -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp">
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp">
 
-            <TextView
-                android:id="@+id/dataPrivacyTitle"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Data Privacy"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
+                android:orientation="vertical"
+                android:padding="16dp"
+                >
 
-            <ImageView
-                android:id="@+id/dataPrivacyArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow" />
-        </LinearLayout>
+                <!-- Privacy Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Privacy"
+                    android:textColor="@color/secondary_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/privacyDetailsTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_about_content"
-            android:text="We value your privacy and follow data protection guidelines. Your data is securely stored and processed only as necessary to provide the BMI app’s features. For detailed information, please see our Privacy Policy."
-            android:padding="10dp"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:visibility="gone" />
+                <LinearLayout
+                    android:id="@+id/dataPrivacyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    >
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Data Privacy"
+                        android:textColor="@color/text_primary_dark"
+                        android:textSize="16sp" />
 
-        <!-- Terms & Conditions Row -->
-        <LinearLayout
-            android:id="@+id/termsAndConditionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp">
+                    <ImageView
+                        android:id="@+id/dataPrivacyArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/arrow"
+                        app:tint="@color/secondary_color" />
+                    <TextView
+                        android:id="@+id/privacyDetailsTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Here you can manage your data privacy settings and preferences."
+                        android:padding="8dp" />
+                </LinearLayout>
 
-            <TextView
-                android:id="@+id/termsAndConditionsTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Terms and Conditions"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0" />
 
-            <ImageView
-                android:id="@+id/termsAndConditionsArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow" />
-        </LinearLayout>
+                <!-- Notifications Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Notifications"
+                    android:textColor="@color/secondary_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/termsAndConditionsTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="By using this app, you agree to the Terms and Conditions. Please read them carefully to understand your rights and responsibilities."
-            android:paddingTop="8dp"
-            android:background="@drawable/round_about_content"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:visibility="gone" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Enable Notifications"
+                        android:textColor="@color/text_primary_dark"
+                        android:textSize="16sp" />
 
-        <!-- Notifications Section Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp"
-            android:text="Notifications"
-            android:textColor="#EA2831"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/notificationSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:thumbTint="@color/secondary_color"
+                        app:trackTint="@color/background_end" />
+                </LinearLayout>
 
-        <!-- Enable Notifications Row with Switch -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="8dp">
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Enable Notifications"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
+                <!-- Units Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Units"
+                    android:textColor="@color/secondary_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <Switch
-                android:id="@+id/mySwitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:thumbTint="@color/thumb_color"
-                android:trackTint="@color/track_color"
-                android:layout_gravity="center"/>
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-        <!-- Units Section Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp"
-            android:text="Units"
-            android:textColor="#EA2831"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Unit Preference"
+                        android:textColor="@color/text_primary_dark"
+                        android:textSize="16sp" />
 
-        <!-- Unit Preference Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:padding="8dp">
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Metric"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@color/secondary_color"
+                        style="@style/Widget.MaterialComponents.Button" />
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Unit Preference"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E0E0E0" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Metric"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
-        </LinearLayout>
+                <!-- Support Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Support"
+                    android:textColor="@color/secondary_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <!-- Support Section Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp"
-            android:text="Support"
-            android:textColor="#EA2831"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+                <LinearLayout
+                    android:id="@+id/helpCenterLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-        <!-- Help Center Row -->
-        <LinearLayout
-            android:id="@+id/helpCenterLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Help Center"
+                        android:textColor="@color/text_primary_dark"
+                        android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/helpCenterTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Help Center"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
+                    <ImageView
+                        android:id="@+id/helpCenterArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/arrow"
+                        app:tint="@color/secondary_color" />
+                    <TextView
+                        android:id="@+id/helpCenterTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Find answers to your questions or browse through FAQs."
+                        android:padding="8dp" />
+                </LinearLayout>
 
-            <ImageView
-                android:id="@+id/helpCenterArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow" />
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/contactSupportLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-        <TextView
-            android:id="@+id/helpCenterTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="For assistance, visit our Help Center. Find answers to common questions and troubleshooting tips."
-            android:paddingTop="8dp"
-            android:background="@drawable/round_about_content"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:visibility="gone" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Contact Support"
+                        android:textColor="@color/text_primary_dark"
+                        android:textSize="16sp" />
 
-        <!-- Contact Support Row -->
-        <LinearLayout
-            android:id="@+id/contactSupportLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/selectableItemBackground"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:clickable="true"
-            android:focusable="true"
-            android:padding="8dp">
-
-            <TextView
-                android:id="@+id/contactSupportitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Contact Support"
-                android:textColor="#F5F5F5"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/contactSupportArrow"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/arrow" />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/contactSupportTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="If you need further support, please contact our Support Team. We are here to help you with any issues."
-            android:paddingTop="8dp"
-            android:textSize="16sp"
-            android:background="@drawable/round_about_content"
-            android:textColor="#FFFFFF"
-            android:visibility="gone" />
-
-
+                    <ImageView
+                        android:id="@+id/contactSupportArrow"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/arrow"
+                        app:tint="@color/secondary_color" />
+                    <TextView
+                        android:id="@+id/contactSupportTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Reach out to us for assistance with your account or other issues."
+                        android:padding="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </ScrollView>
